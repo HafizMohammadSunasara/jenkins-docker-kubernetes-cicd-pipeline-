@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940" role="img" aria-labelledby="title desc">
+<title id="title">V1 Local CI/CD Architecture</title>
+<desc id="desc">Git source change triggers Jenkins on a Windows agent, tests the application, builds a Docker image and deploys to a local Kind Kubernetes cluster. A NodePort service is exposed on localhost port 8081 and serves the health endpoint.</desc>
+<defs>
+ <linearGradient id="page" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7F9FC"/><stop offset="1" stop-color="#EAF0F7"/></linearGradient>
+ <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#172B49"/><stop offset="1" stop-color="#27486F"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0D58A"/><stop offset="1" stop-color="#C89536"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="9" stdDeviation="12" flood-color="#1B3655" flood-opacity=".12"/></filter>
+ <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11" fill="none" stroke="#C1933D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+ <style>
+  .h{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#14263F}.sub{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#607189}.label{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#182C48;font-size:23px;font-weight:700}.small{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#63748B;font-size:18px}.tiny{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#718198;font-size:15px}.card{fill:#fff;stroke:#DCE4EF;stroke-width:2;filter:url(#shadow)}.arrow{fill:none;stroke:#C1933D;stroke-width:4;marker-end:url(#arrow)}
+ </style>
+</defs>
+<rect width="1600" height="940" rx="28" fill="url(#page)"/>
+<text x="82" y="92" class="h" font-size="42" font-weight="800">V1 · LOCAL CI/CD ARCHITECTURE</text>
+<text x="84" y="132" class="sub" font-size="22">Source change → automated checks → container build → local Kubernetes deployment</text>
+<rect x="82" y="165" width="1436" height="660" rx="28" fill="#FFFFFF" fill-opacity=".56" stroke="#D9E2ED" stroke-width="2"/>
+<!-- SCM -->
+<rect x="125" y="350" width="220" height="176" rx="20" class="card"/>
+<circle cx="235" cy="397" r="28" fill="#F3E8CC"/><path d="M220 397 L235 382 L250 397 L235 412 Z" fill="none" stroke="#A97926" stroke-width="4"/><path d="M235 382 V412 M220 397 H250" stroke="#A97926" stroke-width="3"/>
+<text x="235" y="463" text-anchor="middle" class="label">Source Control</text><text x="235" y="493" text-anchor="middle" class="small">SCM change</text>
+<!-- Jenkins agent -->
+<rect x="420" y="280" width="390" height="320" rx="24" fill="#F9FBFE" stroke="#BFCDE0" stroke-width="2" filter="url(#shadow)"/>
+<rect x="420" y="280" width="390" height="66" rx="24" fill="url(#navy)"/><path d="M420 323 H810 V346 H420Z" fill="url(#navy)"/>
+<text x="455" y="323" font-family="Inter,Segoe UI,Arial,sans-serif" fill="#fff" font-size="24" font-weight="800">JENKINS PIPELINE</text>
+<text x="455" y="388" class="small">Windows-based agent</text>
+<rect x="455" y="417" width="320" height="52" rx="12" fill="#EDF2F8"/><text x="475" y="450" class="small" font-weight="700">1 · Checkout source</text>
+<rect x="455" y="482" width="320" height="52" rx="12" fill="#EDF2F8"/><text x="475" y="515" class="small" font-weight="700">2 · Install + run tests</text>
+<rect x="455" y="547" width="320" height="36" rx="10" fill="#E9F4ED"/><text x="475" y="572" font-family="Inter,Segoe UI,Arial,sans-serif" fill="#237149" font-size="17" font-weight="700">7 / 7 stages passed · Build #21</text>
+<!-- Docker build -->
+<rect x="885" y="350" width="220" height="176" rx="20" class="card"/>
+<circle cx="995" cy="397" r="28" fill="#E5EEF9"/><path d="M971 395 H1019 M978 386 H986 V395 M989 386 H997 V395 M1000 386 H1008 V395 M981 404 H1009" fill="none" stroke="#31689B" stroke-width="4" stroke-linecap="round"/>
+<text x="995" y="463" text-anchor="middle" class="label">Docker Build</text><text x="995" y="493" text-anchor="middle" class="small">Image built</text>
+<!-- Kind cluster -->
+<rect x="1180" y="225" width="290" height="440" rx="24" fill="#F9FBFE" stroke="#BFCDE0" stroke-width="2" filter="url(#shadow)"/>
+<rect x="1180" y="225" width="290" height="66" rx="24" fill="url(#navy)"/><path d="M1180 268 H1470 V291 H1180Z" fill="url(#navy)"/>
+<text x="1325" y="267" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" fill="#fff" font-size="24" font-weight="800">KIND CLUSTER</text>
+<text x="1325" y="327" text-anchor="middle" class="small">devops-lab</text>
+<rect x="1212" y="352" width="226" height="82" rx="14" fill="#EAF1F9" stroke="#CAD7E8"/><text x="1325" y="385" text-anchor="middle" class="label" font-size="20">Deployment</text><text x="1325" y="412" text-anchor="middle" class="small">2 application replicas</text>
+<path d="M1325 435 V466" class="arrow"/>
+<rect x="1212" y="476" width="226" height="86" rx="14" fill="#E9F4ED" stroke="#C6E2D0"/><text x="1325" y="510" text-anchor="middle" class="label" font-size="20">NodePort Service</text><text x="1325" y="538" text-anchor="middle" class="small">5000 : 30080</text>
+<text x="1325" y="610" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" fill="#237149" font-size="17" font-weight="700">Node: Ready</text>
+<!-- arrows -->
+<path d="M345 438 H407" class="arrow"/><path d="M810 438 H872" class="arrow"/><path d="M1105 438 H1168" class="arrow"/>
+<text x="375" y="405" text-anchor="middle" class="tiny">trigger</text><text x="842" y="405" text-anchor="middle" class="tiny">build</text><text x="1137" y="405" text-anchor="middle" class="tiny">deploy</text>
+<!-- host access row -->
+<path d="M1325 665 V704 H1000" fill="none" stroke="#C1933D" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+<rect x="690" y="690" width="625" height="92" rx="18" fill="#FFF9EA" stroke="#E7D29E" stroke-width="2"/>
+<text x="725" y="727" class="label" font-size="22">Application health endpoint</text>
+<text x="725" y="758" font-family="ui-monospace,Consolas,monospace" fill="#8A6422" font-size="20">http://localhost:8081/health</text>
+<rect x="1338" y="696" width="130" height="78" rx="16" fill="#E9F4ED" stroke="#C6E2D0" stroke-width="2"/>
+<text x="1403" y="728" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" fill="#237149" font-size="18" font-weight="800">HEALTHY</text>
+<text x="1403" y="754" text-anchor="middle" class="tiny">JSON response</text>
+<text x="92" y="877" class="tiny">Scope: local learning environment · Docker Hub push excluded from this captured successful run.</text>
+</svg>
