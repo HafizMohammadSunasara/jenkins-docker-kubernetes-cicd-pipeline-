@@ -69,7 +69,7 @@ The screenshots below are genuine captures from the completed run.
 
 ### 2. Application health and Kubernetes verification
 
-![Health endpoint and Kubernetes verification commands](evidence/02-health-and-kubernetes-verification.jpg)
+![Health endpoint and Kubernetes verification commands](evidence/02-health-and-kubernetes-verification.png)
 
 *Evidence: health endpoint response, Kind cluster and node checks, NodePort service, and later pod output showing two `1/1 Running` pods. One pod had a restart count of 1 at the time of capture; its cause was not established.*
 
